@@ -41,4 +41,10 @@ public class PdsSpDaoImpl implements PdsSpDao{
 		return list;
 	}
 
+	@Override
+	public void setWrite(HashMap<String, Object> map) {
+		sqlSession.insert("PdsSp.PdsWrite",map);
+		
+	}
+
 }
