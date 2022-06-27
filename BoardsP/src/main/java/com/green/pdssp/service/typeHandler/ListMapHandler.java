@@ -24,7 +24,7 @@ import oracle.sql.ArrayDescriptor;
  *  StringHandler      <->   java.lang.String   <->  CHAR, VARCHAR
  */
 
-public class ListMapHandler implements TypeHandler<Object> {
+public class ListMapHandler implements TypeHandler<Object> { 
 
    @Override
    public void setParameter(PreparedStatement ps, int i, Object parameter, JdbcType jdbcType) throws SQLException {
