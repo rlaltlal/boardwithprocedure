@@ -61,7 +61,13 @@ public class PdsSpController {
 		PdsVo pagePdsVo=(PdsVo) map.get("pagePdsVo");
 		
 		String menu_id=(String)map.get("menu_id");
-		
+		MenuVo vo=null;
+		if(menu_id!=null) {
+			vo=menuService.getMenuView(menu_id);
+		}
+		else {
+			vo=new MenuVo(null,"전체","0");
+		}
 		
 		// 잠시 막아둠String menu_name=pagePdsVo.getMenu_name();
 		

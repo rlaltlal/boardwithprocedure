@@ -48,8 +48,8 @@
           #{nref,  mode=IN, jdbcType=INTEGER},
           
           #{filenames,  mode=IN, javaType=Object, jdbcType=ARRAY, jdbcTypeName=FILE_ARRAY, typeHandler=com.green.pdssp.service.typeHandler.ListMapHandler},
-          #{fileext,  mode=IN, javaType=Object, jdbcType=ARRAY, jdbcTypeName=FILE_ARRAY, typeHandler=com.green.pdssp.service.typeHandler.ListMapHandler},
-          #{sfilename,  mode=IN, javaType=Object, jdbcType=ARRAY, jdbcTypeName=FILE_ARRAY, typeHandler=com.green.pdssp.service.typeHandler.ListMapHandler}
+          #{fileexts,  mode=IN, javaType=Object, jdbcType=ARRAY, jdbcTypeName=FILE_ARRAY, typeHandler=com.green.pdssp.service.typeHandler.ListMapHandler},
+          #{sfilenames,  mode=IN, javaType=Object, jdbcType=ARRAY, jdbcTypeName=FILE_ARRAY, typeHandler=com.green.pdssp.service.typeHandler.ListMapHandler}
     )}
   </insert>
   <select id="PdsView" statementType="CALLABLE" parameterType="hashmap" resultType="com.green.pdssp.vo.PdsVo">

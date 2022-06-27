@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.green.pds.service.impl.PdsFile;
+import com.green.pdssp.service.impl.PdsFile;
 import com.green.pdssp.dao.PdsSpDao;
 import com.green.pdssp.service.PdsSpService;
 import com.green.pdssp.vo.FilesVo;
@@ -75,7 +75,7 @@ public class PdsSpServiceImpl implements PdsSpService {
 	public void setWrite(HashMap<String, Object> map, HttpServletRequest request) {
 		// 파일저장, 글저장
 		System.out.println("service map : "+map);
-		PdsFile.save(map, request);
+		com.green.pdssp.service.impl.PdsFile.save(map, request);
 		
 		System.out.println("service map file saved : "+map);
 		pdsSpDao.setWrite(map);

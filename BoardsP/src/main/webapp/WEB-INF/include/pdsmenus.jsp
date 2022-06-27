@@ -6,8 +6,8 @@
 <table id="menu">
 	<tr>
 	<c:forEach var="menu" items="${menuList}">
-		<td><a href="/Pds/List?menu_id=${menu.menu_id}">${menu.menu_name}</a></td>
+		<td><a href="/PdsSp/List?menu_id=${menu.menu_id}&nowpage=1&pagecount=10&pagegrpnum=1">${menu.menu_name}</a></td>
 	</c:forEach>
-	<td><a href="/Pds/List">All</a></td>
+	<td><a href="/PdsSp/List?menu_id=&nowpage=1&pagecount=10&pagegrpnum=1">All</a></td>
 </tr>
 </table>
