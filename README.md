@@ -25,6 +25,8 @@ SQL> ALTER USER BOARD DEFAULT TABLESPACE
 사용자가 변경되었습니다.
 
 ===========================
+
+
 2-1. table sample
 menus
     MENU_ID  MENU_NAME  MENU_SEQ
@@ -40,6 +42,8 @@ BOARD
     2       [RE] 어려워요   MENU01
     
 =============================
+
+
 2-2
 CREATE TABLE MENUS
 (
@@ -92,6 +96,9 @@ CREATE   TABLE    FILES
 
 
 =======================
+
+
+
 3. ORACLE 배열 
 
 -- ORACLE 배열 -> TABLE
@@ -101,6 +108,9 @@ CREATE OR REPLACE
        VARCHAR2(4000);
 
 ======================
+
+
+
 4. 시퀀스, 함수
 
 
