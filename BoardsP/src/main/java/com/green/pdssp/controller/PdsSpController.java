@@ -3,6 +3,8 @@ package com.green.pdssp.controller;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -150,11 +152,17 @@ public class PdsSpController {
 	
 	@RequestMapping("/PdsSp/Write")
 	//PdsSp/List?menu_id=MENU01&nowpage=1&pagecount=10&pagegrpnum=1
-	public ModelAndView write(@RequestParam HashMap<String,Object> map) {
+	public ModelAndView write(@RequestParam HashMap<String,Object> map, HttpServletRequest request) {
 		ModelAndView mv=new ModelAndView();
 		
+		//PdsSpService pdsSpService.setWrite(map,request); 
+		
+		// int 데이터 파싱
+		int nowpage = Integer.parseInt(String.valueOf(map.get("nowpage")));
+		int pagecount = Integer.parseInt(String.valueOf(map.get("pagecount")));
+		int pagegrpnum = Integer.parseInt(String.valueOf(map.get("pagegrpnum")));
 		String fmt="redirect:/PdsSp/List?menu_id=%s&nowpage=%d&pagecount=%d&pagegrpnum=%d";
-		String loc=String.format(fmt, map.get("menu_id"), map.get("nowpage"), map.get("pagecount"), map.get("pagegrpnum"));
+		String loc=String.format(fmt, (String)map.get("menu_id"), nowpage, pagecount, pagegrpnum);
 		mv.setViewName(loc);
 		return mv;
 	} 
