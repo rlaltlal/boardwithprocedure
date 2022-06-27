@@ -121,5 +121,41 @@ public class PdsSpController {
 		
 		return mv;
 	}
+
+	@RequestMapping("/PdsSp/WriteForm") 
+	// PdsSp/WriteForm?menu_id=MENU01&bnum=0&lvl=0&step=0&nref=0&nowpage=1&pagecount=10&pagegrpnum=1
+	public ModelAndView writeform(@RequestParam HashMap<String,Object> map) {
+		ModelAndView mv=new ModelAndView();
+		
+		//메뉴 목록
+		List<MenuVo> menuList=menuService.getMenuList();
+		
+		//idx로 검색된 pdsVo 글 정보
+//		PdsVo pdsVo=pdsSpService.getPdsView(map);
+		
+		//idx로 조회된 filesList 파일 목록
+//		List<FilesVo> filesList=pdsSpService.getFileList(map);
+		
+		String menu_id=(String)map.get("menu_id");
+		
+		mv.setViewName("pdsSp/writeform");
+		mv.addObject("menuList",menuList);
+//		mv.addObject("pdsVo",pdsVo);
+//		mv.addObject("filesList",filesList);
+//		mv.addObject("menu_id",menu_id);
+		mv.addObject("map",map);
+		
+		return mv;
+	}
 	
+	@RequestMapping("/PdsSp/Write")
+	//PdsSp/List?menu_id=MENU01&nowpage=1&pagecount=10&pagegrpnum=1
+	public ModelAndView write(@RequestParam HashMap<String,Object> map) {
+		ModelAndView mv=new ModelAndView();
+		
+		String fmt="redirect:/PdsSp/List?menu_id=%s&nowpage=%d&pagecount=%d&pagegrpnum=%d";
+		String loc=String.format(fmt, map.get("menu_id"), map.get("nowpage"), map.get("pagecount"), map.get("pagegrpnum"));
+		mv.setViewName(loc);
+		return mv;
+	}
 }

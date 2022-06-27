@@ -24,7 +24,7 @@
 		<table id="PdsList">
 			<caption><h2>${menu_name}자료실</h2></caption>
 			<tr id="tr1">
-				<td colspan="6" class="right"><a href="/Pds/WriteForm?menu_id=${menu_id}&bnum=0&lvl=0&step=0&nref=0&nowpage=${pagePdsVo.nowpage}&pagecount=${pagePdsVo.pagecount}&pagegrpnum=${pagePdsVo.pagegrpnum}">[새글쓰기]</a></td>
+				<td colspan="6" class="right"><a href="/PdsSp/WriteForm?menu_id=${menu_id}&bnum=0&lvl=0&step=0&nref=0&nowpage=${pagePdsVo.nowpage}&pagecount=${pagePdsVo.pagecount}&pagegrpnum=${pagePdsVo.pagegrpnum}">[새글쓰기]</a></td>
 			</tr>
 			<tr>
 				<td>번호</td>
