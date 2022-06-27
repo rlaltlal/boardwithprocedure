@@ -14,5 +14,7 @@ public interface PdsSpDao {
 
 	List<FilesVo> getFileList(HashMap<String, Object> map);
 
+	void setWrite(HashMap<String, Object> map);
+
 
 }

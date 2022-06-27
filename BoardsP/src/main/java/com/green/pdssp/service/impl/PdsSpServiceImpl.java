@@ -74,8 +74,13 @@ public class PdsSpServiceImpl implements PdsSpService {
 	@Override
 	public void setWrite(HashMap<String, Object> map, HttpServletRequest request) {
 		// 파일저장, 글저장
+		System.out.println("service map : "+map);
 		PdsFile.save(map, request);
 		
+		System.out.println("service map file saved : "+map);
+		pdsSpDao.setWrite(map);
+		
+		System.out.println("service map after dao : "+map);
 	}
 
 }
