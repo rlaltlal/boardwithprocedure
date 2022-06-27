@@ -53,7 +53,7 @@
     )}
   </insert>
   <select id="PdsView" statementType="CALLABLE" parameterType="hashmap" resultType="com.green.pdssp.vo.PdsVo">
-    {CALL PKG_PDS.PROC_PDS_VIEW(
+    {CALL PKG_PDS.PROC_PDS_VIEW(   
       #{idx, mode=IN, jdbcType=INTEGER},
       #{result, mode=OUT, jdbcType=CURSOR, javaType=ResultSet, resultMap=PdsMap}
     )}
