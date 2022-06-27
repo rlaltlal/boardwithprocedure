@@ -1,0 +1,74 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+ <%@taglib  prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+ <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(function(){
+		console.log("${pagePdsVo.nextnowpage}");
+		console.log("${pagePdsVo.menu_id}");
+	})
+</script>
+<!-- 변수들이 너무 길어 새로 지정 -->
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+   <c:set  var="showprev"        value="${ pagePdsVo.isshowpageprev }" />
+   <c:set  var="shownext"        value="${ pagePdsVo.isshowpagenext }" />
+    
+   <c:set  var="startnum"        value="${ pagePdsVo.pagestartnum }" /> 
+   <c:set  var="endnum"          value="${ pagePdsVo.pageendnum }" /> 
+   <c:set  var="pagegrpnum"      value="${ pagePdsVo.pagegrpnum }" />
+   
+   <c:set  var="totalcount"      value="${ pagePdsVo.totalcount }" />
+   <c:set  var="pagecount"       value="${ pagePdsVo.pagecount }" />
+   <c:set  var="totalpagecount"  value="${ pagePdsVo.totalpagecount }" />
+   
+   <c:set  var="nowpage"         value="${ pagePdsVo.nowpage }" />
+   <c:set  var="prevnowpage"     value="${ pagePdsVo.prevnowpage }" />
+   <c:set  var="nextnowpage"     value="${ pagePdsVo.nextnowpage }" />
+  
+   
+
+       
+
+<div>
+  <table>
+   <tr>
+    <td>
+      
+      <c:if  test="${ showprev eq true }">
+        <a href="/PdsSp/List?menu_id=${menu_id}&nowpage=1&pagecount=${pagecount}&pagegrpnum=1">
+         [처음]
+        </a>
+      </c:if>
+      
+      <c:if  test="${ showprev eq true }">
+       <a href="/PdsSp/List?menu_id=${menu_id}&nowpage=${prevnowpage}&pagecount=${pagecount}&pagegrpnum=${pagegrpnum-1}">
+        [이전 10 개]
+       </a>
+      </c:if>
+      
+      <!--  11   12  13  14  15  16  17  18  19    20  -->
+      <c:forEach var="pagenum" begin="${ startnum }" end="${ endnum }" step="1">
+      <a href="/PdsSp/List?menu_id=${ menu_id }&nowpage=${pagenum}&pagecount=${pagecount}&pagegrpnum=${pagegrpnum}">
+         ${ pagenum }
+      </a>&nbsp;&nbsp;
+      </c:forEach>
+      
+      <c:if test="${ shownext eq true }">
+       <a href="/PdsSp/List?menu_id=${menu_id}&nowpage=${pagegrpnum*10+1}&pagecount=${pagecount}&pagegrpnum=${pagegrpnum+1}">
+        [다음 10 개]
+       </a>
+      </c:if>
+      <c:if test="${ shownext eq true }">
+       <a href="/PdsSp/List?menu_id=${menu_id}&nowpage=${totalcount}&pagecount=${pagecount}&pagegrpnum=1">
+        [마지막]
+       </a>
+      </c:if>
+      
+      
+    </td>
+   </tr>
+  </table>
+</div>
+
