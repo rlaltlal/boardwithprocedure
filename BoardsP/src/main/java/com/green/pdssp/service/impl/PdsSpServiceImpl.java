@@ -3,6 +3,8 @@ package com.green.pdssp.service.impl;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -66,6 +68,12 @@ public class PdsSpServiceImpl implements PdsSpService {
 	public List<FilesVo> getFileList(HashMap<String, Object> map) {
 		List<FilesVo> list=pdsSpDao.getFileList(map);
 		return list;
+	}
+
+	@Override
+	public void setWrite(HashMap<String, Object> map, HttpServletRequest request) {
+		// 파일저장, 글저장
+		
 	}
 
 }

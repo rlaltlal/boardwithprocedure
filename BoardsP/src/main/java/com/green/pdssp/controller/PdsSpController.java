@@ -155,7 +155,7 @@ public class PdsSpController {
 	public ModelAndView write(@RequestParam HashMap<String,Object> map, HttpServletRequest request) {
 		ModelAndView mv=new ModelAndView();
 		
-		//PdsSpService pdsSpService.setWrite(map,request); 
+		pdsSpService.setWrite(map,request); 
 		
 		// int 데이터 파싱
 		int nowpage = Integer.parseInt(String.valueOf(map.get("nowpage")));
@@ -163,7 +163,9 @@ public class PdsSpController {
 		int pagegrpnum = Integer.parseInt(String.valueOf(map.get("pagegrpnum")));
 		String fmt="redirect:/PdsSp/List?menu_id=%s&nowpage=%d&pagecount=%d&pagegrpnum=%d";
 		String loc=String.format(fmt, (String)map.get("menu_id"), nowpage, pagecount, pagegrpnum);
+		mv.addObject("map",map);
 		mv.setViewName(loc);
 		return mv;
-	} 
+	}
+
 }
