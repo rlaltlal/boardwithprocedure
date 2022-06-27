@@ -27,7 +27,11 @@ SQL> ALTER USER BOARD DEFAULT TABLESPACE
 ===========================
 
 
-2-1. table sample
+2-1. table DATA sample
+
+
+
+
 menus
     MENU_ID  MENU_NAME  MENU_SEQ
     MENU01   JAVA       2
