@@ -81,18 +81,21 @@
 		<%@ include file="/WEB-INF/include/pdsmenus.jsp" %>
 		<!-- 글 조회-->
 		<table id="board">
-			<form action="/Pds/Update" method="post" enctype="multipart/form-data">
+			<form action="/PdsSp/Update" method="post" enctype="multipart/form-data">
 				<!-- 첨부파일과 함께 글쓰기와 동일하게 enctype="multipart/form-data" 추가-->
 				<input type="hidden" name="menu_id" value="${pdsVo.menu_id}">
 				<input type="hidden" name="idx" value="${pdsVo.idx}">
-				<caption><h2>내용 보기</h2></caption>
+				<input type="hidden" name="nowpage" value="${map.nowpage}">
+				<input type="hidden" name="pagecount" value="${map.pagecount}">
+				<input type="hidden" name="pagegrpnum" value="${map.pagegrpnum}">
+				<caption><h2>내용 수정</h2></caption>
 				<tr>
 					<td>글 번호</td>
 					<td>${pdsVo.idx} </td>
 					<td>조회수</td>
 					<td>${pdsVo.readcount} </td>
 				</tr>
-				<tr>
+				<tr>          
 					<td>작성일</td>
 					<td>${pdsVo.regdate}</td>
 					<td>작성자</td>

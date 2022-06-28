@@ -130,6 +130,12 @@ public class PdsSpController {
 		return mv;
 	}
 
+	@RequestMapping("/PdsSp/Update")
+	public ModelAndView update(HashMap<String,Object> map) {
+		ModelAndView mv=new ModelAndView();
+		return mv;
+		
+	}
 	@RequestMapping("/PdsSp/WriteForm") 
 	// PdsSp/WriteForm?menu_id=MENU01&bnum=0&lvl=0&step=0&nref=0&nowpage=1&pagecount=10&pagegrpnum=1
 	public ModelAndView writeform(@RequestParam HashMap<String,Object> map) {
