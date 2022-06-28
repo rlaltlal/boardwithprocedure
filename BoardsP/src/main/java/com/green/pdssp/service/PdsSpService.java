@@ -18,4 +18,6 @@ public interface PdsSpService {
 
 	void setWrite(HashMap<String, Object> map, HttpServletRequest request);
 
+	void setUpdate(HashMap<String, Object> map, HttpServletRequest request);
+
 }

@@ -83,4 +83,14 @@ public class PdsSpServiceImpl implements PdsSpService {
 		System.out.println("service map after dao : "+map);
 	}
 
+	@Override
+	public void setUpdate(HashMap<String, Object> map, HttpServletRequest request) {
+		//글 내용 수정, 파일정보 추가
+		
+		com.green.pdssp.service.impl.PdsFile.save(map, request);
+		
+		pdsSpDao.setUpdate(map);
+		System.out.println(map);
+	}
+
 }

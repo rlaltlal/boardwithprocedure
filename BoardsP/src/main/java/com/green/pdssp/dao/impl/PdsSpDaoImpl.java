@@ -47,4 +47,10 @@ public class PdsSpDaoImpl implements PdsSpDao{
 		
 	}
 
+	@Override
+	public void setUpdate(HashMap<String, Object> map) {
+		sqlSession.update("PdsSp.PdsUpdate",map);
+		
+	}
+
 }

@@ -65,4 +65,16 @@
       #{result, mode=OUT, jdbcType=CURSOR, javaType=ResultSet, resultMap=FileListMap}
     )}
   </select>
+  <update id="PdsUpdate" statementType="CALLABLE" parameterType="hashmap">
+    {CALL PKG_PDS.PROC_PDS_UPDATE(
+        #{idx, mode=IN, jdbcType=INTEGER },
+        #{title, mode=IN, jdbcType=VARCHAR },
+        #{cont, mode=IN, jdbcType=VARCHAR },
+        
+        #{filenames,  mode=IN, javaType=Object, jdbcType=ARRAY, jdbcTypeName=FILE_ARRAY, typeHandler=com.green.pdssp.service.typeHandler.ListMapHandler},
+        #{fileexts,  mode=IN, javaType=Object, jdbcType=ARRAY, jdbcTypeName=FILE_ARRAY, typeHandler=com.green.pdssp.service.typeHandler.ListMapHandler},
+        #{sfilenames,  mode=IN, javaType=Object, jdbcType=ARRAY, jdbcTypeName=FILE_ARRAY, typeHandler=com.green.pdssp.service.typeHandler.ListMapHandler}
+
+        )}
+  </update>
 </mapper>

@@ -16,5 +16,7 @@ public interface PdsSpDao {
 
 	void setWrite(HashMap<String, Object> map);
 
+	void setUpdate(HashMap<String, Object> map);
+
 
 }

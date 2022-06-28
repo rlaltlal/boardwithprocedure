@@ -52,13 +52,13 @@
 			e.stopPropagation();
 			let aDelete=e.target; // let aDelete=this; 같음
 			let href=aDelete.href; 
-			alert(href);
 			$.ajax({
-				url:href,
+        url:href,
 				method:'get',
 				success:function(data){
 					alert('삭제 완료');
-					$('#aDelete').parent().remove;
+					$('#aDelete').parent().remove();
+          return false;
 				},
 				error:function(xhr){
 					alert(xhr.status+' : '+xhr.statusText);

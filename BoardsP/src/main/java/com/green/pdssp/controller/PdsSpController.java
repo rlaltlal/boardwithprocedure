@@ -131,8 +131,18 @@ public class PdsSpController {
 	}
 
 	@RequestMapping("/PdsSp/Update")
-	public ModelAndView update(HashMap<String,Object> map) {
+	public ModelAndView update(@RequestParam HashMap<String,Object> map,HttpServletRequest request) {
 		ModelAndView mv=new ModelAndView();
+		
+		pdsSpService.setUpdate(map,request);
+		
+		// int 데이터 파싱
+		int nowpage = Integer.parseInt(String.valueOf(map.get("nowpage")));
+		int pagecount = Integer.parseInt(String.valueOf(map.get("pagecount")));
+		int pagegrpnum = Integer.parseInt(String.valueOf(map.get("pagegrpnum")));
+		String str="redirect:/PdsSp/List?menu_id=%s&nowpage=%d&pagecount=%d&pagegrpnum=%d";
+		String loc=String.format(str, (String)map.get("menu_id"), nowpage, pagecount, pagegrpnum);
+		mv.setViewName(loc);
 		return mv;
 		
 	}
