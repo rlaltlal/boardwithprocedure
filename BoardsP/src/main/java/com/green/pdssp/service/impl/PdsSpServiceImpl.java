@@ -93,4 +93,9 @@ public class PdsSpServiceImpl implements PdsSpService {
 		System.out.println(map);
 	}
 
+	@Override
+	public void setDelete(HashMap<String, Object> map) {
+		pdsSpDao.setDelete(map);
+	}
+
 }

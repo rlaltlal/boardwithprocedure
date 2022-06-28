@@ -20,7 +20,7 @@
 </head>
 <body>
 	<div id="main">
-		<%@ include file="/WEB-INF/include/pdsmenus.jsp"%>
+		<%@ include file="/WEB-INF/include/pagingpdsmenus.jsp"%>
 		<table id="PdsList">
 			<caption><h2>${menu_name}자료실</h2></caption>
 			<tr id="tr1">
@@ -59,7 +59,7 @@
                                 <b style="display: inline-block; width: ${pds.lvl*20}px;"></b>	
                                 <c:choose>
 									<c:when test="${pds.delnum eq 0}">
-                                        <a href="/Pds/View?menu_id=${pds.menu_id}&idx=${pds.idx}&nowpage=${pagePdsVo.nowpage}&pagecount=${pagePdsVo.pagecount}&pagegrpnum=${pagePdsVo.pagegrpnum}">[답글] ${pds.title}</a> 
+                                        <a href="/PdsSp/View?menu_id=${pds.menu_id}&idx=${pds.idx}&nowpage=${pagePdsVo.nowpage}&pagecount=${pagePdsVo.pagecount}&pagegrpnum=${pagePdsVo.pagegrpnum}">[답글] ${pds.title}</a> 
 									</c:when>
 									<c:otherwise>
 										<s>삭제된 글입니다.</s>

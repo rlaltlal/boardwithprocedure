@@ -77,4 +77,12 @@
 
         )}
   </update>
+  <delete id="PdsDelete" statementType="CALLABLE" parameterType="hashmap"> 
+    {CALL PKG_PDS.PROC_PDS_DELETE(
+        #{idx, mode=IN, jdbcType=INTEGER},
+        #{nref, mode=IN, jdbcType=INTEGER},
+        #{lvl, mode=IN, jdbcType=INTEGER},
+        #{step, mode=IN, jdbcType=INTEGER}
+    )}
+  </delete>
 </mapper>

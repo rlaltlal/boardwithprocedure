@@ -72,13 +72,18 @@
 			e.stopPropagation();
 			e.target.parentElement.remove();	
 		})
+    $('#tolist').on('click',function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      $(location).attr('href','/PdsSp/List?menu_id=MENU01&nowpage=${map.nowpage}&pagecount=${map.pagecount}&pagegrpnum=${map.pagegrpnum}')
+    })
 	})
 </script>
 </head>
 <body>
 	<div id="main">
 		<!-- 메뉴 목록-->
-		<%@ include file="/WEB-INF/include/pdsmenus.jsp" %>
+		<%@ include file="/WEB-INF/include/pagingpdsmenus.jsp" %>
 		<!-- 글 조회-->
 		<table id="board">
 			<form action="/PdsSp/Update" method="post" enctype="multipart/form-data">
@@ -133,6 +138,7 @@
 				<tr>
 					<td colspan="4">
 						<button type="submit">제출</button>
+						<button type="tolist" style="margin-left: 10px;">목록으로</button>
 					</td>
 				</tr>
 			</form>

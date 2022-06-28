@@ -46,7 +46,7 @@
 	-->
 	<div id="main">
 		<!-- 메뉴 -->
-		<%@ include file="/WEB-INF/include/menus.jsp"%>
+		<%@ include file="/WEB-INF/include/pagingpdsmenus.jsp"%>
 
 		<!-- 새글쓰기 자료실 -->
 		<form action="/PdsSp/Write" method="post" id="form1" enctype="multipart/form-data">

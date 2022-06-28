@@ -28,7 +28,7 @@
 <body>
 	<div id="main">
 		<!-- 메뉴 목록-->
-		<%@ include file="/WEB-INF/include/pdsmenus.jsp" %>
+		<%@ include file="/WEB-INF/include/pagingpdsmenus.jsp" %>
 		<!-- 글 조회-->
 		<table id="board">
 			<caption><h2>내용 보기</h2></caption>
@@ -67,11 +67,11 @@
 			</tr>
 			<tr>
 				<td colspan="4">
-					[<a href="/PdsSp/WriteForm?menu_id=${pdsVo.menu_id}&bnum=0&lvl=0&step=0&nref=0">새글쓰기</a>]
-					[<a href="/PdsSp/WriteForm?menu_id=${pdsVo.menu_id}&idx=${pdsVo.idx}&bnum=${pdsVo.bnum}&lvl=${pdsVo.lvl}&step=${pdsVo.step}&nref=${pdsVo.nref}">답글쓰기</a>]
+					[<a href="/PdsSp/WriteForm?menu_id=${pdsVo.menu_id}&bnum=0&lvl=0&step=0&nref=0&nowpage=${map.nowpage}&pagecount=${map.pagecount}&pagegrpnum=${map.pagegrpnum}">새글쓰기</a>]
+					[<a href="/PdsSp/WriteForm?menu_id=${pdsVo.menu_id}&idx=${pdsVo.idx}&bnum=${pdsVo.bnum}&lvl=${pdsVo.lvl}&step=${pdsVo.step}&nref=${pdsVo.nref}&nowpage=${map.nowpage}&pagecount=${map.pagecount}&pagegrpnum=${map.pagegrpnum}">답글쓰기</a>]
 					<!--  & < >  (html: &amp; &lt; &gt) -->
 					[<a href="/PdsSp/UpdateForm?idx=${pdsVo.idx}&menu_id=${pdsVo.menu_id}&nowpage=${map.nowpage}&pagecount=${map.pagecount}&pagegrpnum=${map.pagegrpnum}">수정</a>]
-					[<a href="/PdsSp/Delete?idx=${pdsVo.idx}&menu_id=${pdsVo.menu_id}">삭제</a>]
+					[<a href="/PdsSp/Delete?idx=${pdsVo.idx}&menu_id=${pdsVo.menu_id}&nowpage=${map.nowpage}&pagecount=${map.pagecount}&pagegrpnum=${map.pagegrpnum}&lvl=${pdsVo.lvl}&step=${pdsVo.step}&nref=${pdsVo.nref}">삭제</a>]
 					<!-- 삭제하고 같이가져간 menuid로 이동 -->
 					[<a href="/PdsSp/List?menu_id=${pdsVo.menu_id}&nowpage=${map.nowpage}&pagecount=${map.pagecount}&pagegrpnum=${map.pagegrpnum}">목록으로</a>]
 					[<a href="javascript:history.back()">이전으로</a>]

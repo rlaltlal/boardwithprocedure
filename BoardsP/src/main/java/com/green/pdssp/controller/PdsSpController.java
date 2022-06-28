@@ -190,4 +190,20 @@ public class PdsSpController {
 		return mv;
 	}
 
+	@RequestMapping("/PdsSp/Delete")
+	public ModelAndView delete(@RequestParam HashMap<String,Object> map) {
+		ModelAndView mv=new ModelAndView();
+
+		pdsSpService.setDelete(map);
+		
+		// int 데이터 파싱
+		int nowpage = Integer.parseInt(String.valueOf(map.get("nowpage")));
+		int pagecount = Integer.parseInt(String.valueOf(map.get("pagecount")));
+		int pagegrpnum = Integer.parseInt(String.valueOf(map.get("pagegrpnum")));
+		String fmt="redirect:/PdsSp/List?menu_id=%s&nowpage=%d&pagecount=%d&pagegrpnum=%d";
+		String loc=String.format(fmt, (String)map.get("menu_id"), nowpage, pagecount, pagegrpnum);
+		mv.addObject("map",map);
+		mv.setViewName(loc);
+		return mv;
+	}
 }

@@ -53,4 +53,9 @@ public class PdsSpDaoImpl implements PdsSpDao{
 		
 	}
 
+	@Override
+	public void setDelete(HashMap<String, Object> map) {
+		sqlSession.delete("PdsSp.PdsDelete",map);
+	}
+
 }
